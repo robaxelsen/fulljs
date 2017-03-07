@@ -1,0 +1,20 @@
+{
+  "name": "fulljs",
+  "version": "1.0.0",
+  "description": "Learning repo for myself to learn React on top of a MEN stack.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robeerob/fulljs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/robeerob/fulljs/issues"
+  },
+  "homepage": "https://github.com/robeerob/fulljs#readme"
+}
