@@ -4,36 +4,40 @@
   "description": "Learning repo for myself to learn React on top of a MEN stack.",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon -exec babel-node server.js --ignore public/",
+    "start": "nodemon --exec babel-node server.js --ignore public/",
     "dev": "webpack -wd"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/robeerob/fulljs.git"
   },
-  "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/robeerob/fulljs/issues"
   },
   "homepage": "https://github.com/robeerob/fulljs#readme",
   "dependencies": {
-    "express": "^4.15.2",
-    "mongodb": "^2.2.24",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "axios": "^0.15.0",
+    "body-parser": "^1.15.2",
+    "ejs": "^2.5.2",
+    "express": "^4.14.0",
+    "json-loader": "^0.5.4",
+    "mongodb": "^2.2.10",
+    "node-sass-middleware": "^0.9.8",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2"
   },
   "devDependencies": {
-    "babel-cli": "^6.23.0",
-    "babel-eslint": "6.1.2",
-    "babel-loader": "^6.4.0",
-    "babel-preset-es2015": "^6.22.0",
-    "babel-preset-react": "^6.23.0",
-    "babel-preset-stage-2": "^6.22.0",
-    "eslint": "^3.17.1",
-    "eslint-plugin-react": "^6.10.0",
+    "babel-cli": "^6.16.0",
+    "babel-eslint": "^7.0.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-2": "^6.17.0",
+    "eslint": "^3.7.1",
+    "eslint-plugin-react": "^6.4.0",
     "nodemon": "^1.11.0",
-    "webpack": "1.13.2"
+    "webpack": "^1.13.2"
   }
 }
