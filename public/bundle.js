@@ -59,14 +59,23 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var color = Math.random() > 0.5 ? 'green' : 'red';
+	var App = function App(props) {
+	  return _react2.default.createElement(
+	    'h2',
+	    { className: 'text-center' },
+	    props.headerMessage
+	  );
+	};
 	
-	_reactDom2.default.render(_react2.default.createElement(
-	  'h2',
-	  { style: { color: color }, className: 'text-center' },
-	  'Hello React with JSX!! -- ',
-	  Math.random()
-	), document.getElementById('root'));
+	App.propTypes = {
+	  headerMessage: _react2.default.PropTypes.string
+	};
+	
+	App.defaultProps = {
+	  headerMessage: 'Hello defaultProps'
+	};
+	
+	_reactDom2.default.render(_react2.default.createElement(App, null), document.getElementById('root'));
 
 /***/ },
 /* 1 */
