@@ -57,26 +57,13 @@
 	
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 	
-	var _Header = __webpack_require__(/*! ./components/Header */ 178);
+	var _App = __webpack_require__(/*! ./components/App */ 179);
 	
-	var _Header2 = _interopRequireDefault(_Header);
+	var _App2 = _interopRequireDefault(_App);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var App = function App() {
-	  return _react2.default.createElement(
-	    'div',
-	    { className: 'App' },
-	    _react2.default.createElement(_Header2.default, { message: 'Naming Contests' }),
-	    _react2.default.createElement(
-	      'div',
-	      null,
-	      '...'
-	    )
-	  );
-	};
-	
-	_reactDom2.default.render(_react2.default.createElement(App, null), document.getElementById('root'));
+	_reactDom2.default.render(_react2.default.createElement(_App2.default, null), document.getElementById('root'));
 
 /***/ },
 /* 1 */
@@ -22119,6 +22106,44 @@
 	};
 	
 	exports.default = Header;
+
+/***/ },
+/* 179 */
+/*!*******************************!*\
+  !*** ./src/components/App.js ***!
+  \*******************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _Header = __webpack_require__(/*! ./Header */ 178);
+	
+	var _Header2 = _interopRequireDefault(_Header);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var App = function App() {
+	  return _react2.default.createElement(
+	    'div',
+	    { className: 'App' },
+	    _react2.default.createElement(_Header2.default, { message: 'Naming Contests' }),
+	    _react2.default.createElement(
+	      'div',
+	      null,
+	      '...'
+	    )
+	  );
+	};
+	
+	exports.default = App;
 
 /***/ }
 /******/ ]);
