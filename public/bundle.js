@@ -64,7 +64,7 @@
 	
 	  return _react2.default.createElement(
 	    'h2',
-	    { className: 'text-center' },
+	    { className: ' Header text-center' },
 	    message
 	  );
 	};
@@ -76,7 +76,7 @@
 	var App = function App() {
 	  return _react2.default.createElement(
 	    'div',
-	    null,
+	    { className: 'App' },
 	    _react2.default.createElement(Header, { message: 'Naming Contests' }),
 	    _react2.default.createElement(
 	      'div',
