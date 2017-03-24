@@ -64,6 +64,14 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	_reactDom2.default.render(_react2.default.createElement(_App2.default, null), document.getElementById('root'));
+	
+	setTimeout(function () {
+	  _reactDom2.default.render(_react2.default.createElement(
+	    'h2',
+	    null,
+	    '...'
+	  ), document.getElementById('root'));
+	}, 4000);
 
 /***/ },
 /* 1 */
@@ -22123,6 +22131,17 @@
 	  }
 	
 	  _createClass(App, [{
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      // we usually integrate third party sdk etc here, as well as any
+	      // ajax fetching, as well as timers and listeners to other events
+	    }
+	  }, {
+	    key: 'componentWillUnmount',
+	    value: function componentWillUnmount() {
+	      // here we usually clean timers and listeners
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
