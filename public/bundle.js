@@ -57,11 +57,18 @@
 	
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 	
+	var _testData = __webpack_require__(/*! ./testData */ 180);
+	
+	var _testData2 = _interopRequireDefault(_testData);
+	
 	var _App = __webpack_require__(/*! ./components/App */ 178);
 	
 	var _App2 = _interopRequireDefault(_App);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	console.log(_testData2.default);
+	
 	
 	_reactDom2.default.render(_react2.default.createElement(_App2.default, null), document.getElementById('root'));
 	
@@ -22198,6 +22205,38 @@
 	};
 	
 	exports.default = Header;
+
+/***/ },
+/* 180 */
+/*!***************************!*\
+  !*** ./src/testData.json ***!
+  \***************************/
+/***/ function(module, exports) {
+
+	module.exports = {
+		"contests": [
+			{
+				"id": 1,
+				"categoryName": "Business/Company",
+				"contestName": "Cognitive Building Bricks"
+			},
+			{
+				"id": 2,
+				"categoryName": "Magazine/Newsletter",
+				"contestName": "Educating people about sustainable food production"
+			},
+			{
+				"id": 3,
+				"categoryName": "Software Component",
+				"contestName": "Big Data Analytics for Cash Circulation"
+			},
+			{
+				"id": 4,
+				"categoryName": "Website",
+				"contestName": "Free programming books"
+			}
+		]
+	};
 
 /***/ }
 /******/ ]);
