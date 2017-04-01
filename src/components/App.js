@@ -1,14 +1,17 @@
 import React from 'react';
 import Header from './Header';
 import ContestPreview from './ContestPreview.js';
+import data from '../testData';
 
 class App extends React.Component {
   state = {
-    pageHeader: 'Naming Contests'
+    pageHeader: 'Naming Contests',
+    contests: []
   };
   componentDidMount() {
-    // we usually integrate third party sdk etc here, as well as any
-    // ajax fetching, as well as timers and listeners to other events
+    this.setState({
+      contests: data.contests
+    })
   }
   componentWillUnmount() {
     // here we usually clean timers and listeners
@@ -18,8 +21,8 @@ class App extends React.Component {
       <div className="App">
         <Header message={this.state.pageHeader} />
         <div>
-          {this.props.contests.map(contest =>
-            <ContestPreview {...contest} /> 
+          {this.state.contests.map(contest =>
+            <ContestPreview key={contest.id} {...contest} /> 
           )}
         </div>
       </div>
