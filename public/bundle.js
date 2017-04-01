@@ -22073,38 +22073,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../../process/browser.js */ 3)))
 
 /***/ },
-/* 178 */
-/*!***************************!*\
-  !*** ./src/testData.json ***!
-  \***************************/
-/***/ function(module, exports) {
-
-	module.exports = {
-		"contests": [
-			{
-				"id": 1,
-				"categoryName": "Business/Company",
-				"contestName": "Cognitive Building Bricks"
-			},
-			{
-				"id": 2,
-				"categoryName": "Magazine/Newsletter",
-				"contestName": "Educating people about sustainable food production"
-			},
-			{
-				"id": 3,
-				"categoryName": "Software Component",
-				"contestName": "Big Data Analytics for Cash Circulation"
-			},
-			{
-				"id": 4,
-				"categoryName": "Website",
-				"contestName": "Free programming books"
-			}
-		]
-	};
-
-/***/ },
+/* 178 */,
 /* 179 */
 /*!*******************************!*\
   !*** ./src/components/App.js ***!
@@ -22132,10 +22101,6 @@
 	var _ContestPreview = __webpack_require__(/*! ./ContestPreview.js */ 181);
 	
 	var _ContestPreview2 = _interopRequireDefault(_ContestPreview);
-	
-	var _testData = __webpack_require__(/*! ../testData */ 178);
-	
-	var _testData2 = _interopRequireDefault(_testData);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -22168,8 +22133,11 @@
 	  _createClass(App, [{
 	    key: 'componentDidMount',
 	    value: function componentDidMount() {
+	      // TODO: Ajax request to fetch the data from the remote api,
+	      // and once we have the data we make it available through the
+	      // react state
 	      this.setState({
-	        contests: _testData2.default.contests
+	        contests: data.contests
 	      });
 	    }
 	  }, {

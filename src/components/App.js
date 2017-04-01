@@ -1,7 +1,6 @@
 import React from 'react';
 import Header from './Header';
 import ContestPreview from './ContestPreview.js';
-import data from '../testData';
 
 class App extends React.Component {
   state = {
@@ -9,6 +8,9 @@ class App extends React.Component {
     contests: []
   };
   componentDidMount() {
+    // TODO: Ajax request to fetch the data from the remote api,
+    // and once we have the data we make it available through the
+    // react state
     this.setState({
       contests: data.contests
     })
