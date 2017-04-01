@@ -9,12 +9,13 @@ class App extends React.Component {
     contests: []
   };
   componentDidMount() {
-    // TODO: Ajax request to fetch the data from the remote api,
-    // and once we have the data we make it available through the
-    // react state
-    this.setState({
-      contests: data.contests
-    })
+    axios.get('/api/contests')
+      .then(response => {
+        this.setState({
+          contests: response.data.contests
+        })
+      })
+      .catch(console.error);
   }
   componentWillUnmount() {
     // here we usually clean timers and listeners

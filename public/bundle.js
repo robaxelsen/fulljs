@@ -22137,12 +22137,13 @@
 	  _createClass(App, [{
 	    key: 'componentDidMount',
 	    value: function componentDidMount() {
-	      // TODO: Ajax request to fetch the data from the remote api,
-	      // and once we have the data we make it available through the
-	      // react state
-	      this.setState({
-	        contests: data.contests
-	      });
+	      var _this2 = this;
+	
+	      _axios2.default.get('/api/contests').then(function (response) {
+	        _this2.setState({
+	          contests: response.data.contests
+	        });
+	      }).catch(console.error);
 	    }
 	  }, {
 	    key: 'componentWillUnmount',
