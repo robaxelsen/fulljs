@@ -22110,8 +22110,6 @@
 	  value: true
 	});
 	
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
 	var _react = __webpack_require__(/*! react */ 1);
@@ -22122,9 +22120,9 @@
 	
 	var _Header2 = _interopRequireDefault(_Header);
 	
-	var _ContestPreview = __webpack_require__(/*! ./ContestPreview.js */ 205);
+	var _ContestList = __webpack_require__(/*! ./ContestList */ 206);
 	
-	var _ContestPreview2 = _interopRequireDefault(_ContestPreview);
+	var _ContestList2 = _interopRequireDefault(_ContestList);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -22169,13 +22167,7 @@
 	        'div',
 	        { className: 'App' },
 	        _react2.default.createElement(_Header2.default, { message: this.state.pageHeader }),
-	        _react2.default.createElement(
-	          'div',
-	          null,
-	          this.state.contests.map(function (contest) {
-	            return _react2.default.createElement(_ContestPreview2.default, _extends({ key: contest.id }, contest));
-	          })
-	        )
+	        _react2.default.createElement(_ContestList2.default, { contests: this.state.contests })
 	      );
 	    }
 	  }]);
@@ -22259,6 +22251,48 @@
 	};
 	
 	exports.default = ContestPreview;
+
+/***/ },
+/* 206 */
+/*!***************************************!*\
+  !*** ./src/components/ContestList.js ***!
+  \***************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _ContestPreview = __webpack_require__(/*! ./ContestPreview.js */ 205);
+	
+	var _ContestPreview2 = _interopRequireDefault(_ContestPreview);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var ContestList = function ContestList(_ref) {
+	  var contests = _ref.contests;
+	  return _react2.default.createElement(
+	    'div',
+	    { className: 'ContestList' },
+	    contests.map(function (contest) {
+	      return _react2.default.createElement(_ContestPreview2.default, _extends({ key: contest.id }, contest));
+	    })
+	  );
+	};
+	
+	ContestList.propTypes = {
+	  contests: _react2.default.PropTypes.array
+	};
+	
+	exports.default = ContestList;
 
 /***/ }
 /******/ ]);
