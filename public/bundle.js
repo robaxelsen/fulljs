@@ -57,22 +57,13 @@
 	
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 	
-	var _axios = __webpack_require__(/*! axios */ 178);
-	
-	var _axios2 = _interopRequireDefault(_axios);
-	
 	var _App = __webpack_require__(/*! ./components/App */ 203);
 	
 	var _App2 = _interopRequireDefault(_App);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	_axios2.default.get('/api/contests').then(function (response) {
-	  _reactDom2.default.render(_react2.default.createElement(_App2.default, { initialContests: response.data.contests }), document.getElementById('root'));
-	  //this.setState({
-	  //  contests: response.data.contests
-	  //});
-	}).catch(console.error);
+	_reactDom2.default.render(_react2.default.createElement(_App2.default, { initialContests: window.initialData.contests }), document.getElementById('root'));
 
 /***/ },
 /* 1 */

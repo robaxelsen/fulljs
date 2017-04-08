@@ -15,11 +15,12 @@ server.set('view engine', 'ejs');
 
 import serverRender from './serverRender';
 
-server.get('/', (req, res) => {
+server.get('/', (request, response) => {
   serverRender()
-    .then(content => {
-      res.render('index', {
-        content
+    .then(({initialMarkup, initialData}) => {
+      response.render('index', {
+        initialMarkup,
+        initialData
       });      
     })
     .catch(console.error);
