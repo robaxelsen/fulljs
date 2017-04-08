@@ -9,13 +9,13 @@ class App extends React.Component {
     contests: this.props.initialContests
   };
   componentDidMount() {
-    axios.get('/api/contests')
-      .then(response => {
-        this.setState({
-          contests: response.data.contests
-        })
-      })
-      .catch(console.error);
+//    axios.get('/api/contests')
+//      .then(response => {
+//        this.setState({
+//          contests: response.data.contests
+//        })
+//      })
+//      .catch(console.error);
   }
   componentWillUnmount() {
     // here we usually clean timers and listeners
