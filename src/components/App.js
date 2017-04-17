@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './Header';
 import ContestList from './ContestList';
+import Contest from './Contest';
 
 const pushState = (obj, url) =>
   window.history.pushState(obj, '', url);
@@ -24,7 +25,7 @@ class App extends React.Component {
     // lookup the state
     // this.state.contest[contestId]
     this.setState({
-      pageHeader: this.state.contests[contestId].contestName
+      pageHeader: this.state.contests[contestId].contestName,
       currentContestId: contestId
     })
   };
