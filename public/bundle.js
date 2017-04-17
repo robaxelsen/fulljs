@@ -57,7 +57,7 @@
 	
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 	
-	var _App = __webpack_require__(/*! ./components/App */ 203);
+	var _App = __webpack_require__(/*! ./components/App */ 178);
 	
 	var _App2 = _interopRequireDefault(_App);
 	
@@ -22073,32 +22073,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../../process/browser.js */ 3)))
 
 /***/ },
-/* 178 */,
-/* 179 */,
-/* 180 */,
-/* 181 */,
-/* 182 */,
-/* 183 */,
-/* 184 */,
-/* 185 */,
-/* 186 */,
-/* 187 */,
-/* 188 */,
-/* 189 */,
-/* 190 */,
-/* 191 */,
-/* 192 */,
-/* 193 */,
-/* 194 */,
-/* 195 */,
-/* 196 */,
-/* 197 */,
-/* 198 */,
-/* 199 */,
-/* 200 */,
-/* 201 */,
-/* 202 */,
-/* 203 */
+/* 178 */
 /*!*******************************!*\
   !*** ./src/components/App.js ***!
   \*******************************/
@@ -22116,11 +22091,11 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _Header = __webpack_require__(/*! ./Header */ 204);
+	var _Header = __webpack_require__(/*! ./Header */ 179);
 	
 	var _Header2 = _interopRequireDefault(_Header);
 	
-	var _ContestList = __webpack_require__(/*! ./ContestList */ 206);
+	var _ContestList = __webpack_require__(/*! ./ContestList */ 180);
 	
 	var _ContestList2 = _interopRequireDefault(_ContestList);
 	
@@ -22188,7 +22163,7 @@
 	exports.default = App;
 
 /***/ },
-/* 204 */
+/* 179 */
 /*!**********************************!*\
   !*** ./src/components/Header.js ***!
   \**********************************/
@@ -22223,7 +22198,54 @@
 	exports.default = Header;
 
 /***/ },
-/* 205 */
+/* 180 */
+/*!***************************************!*\
+  !*** ./src/components/ContestList.js ***!
+  \***************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _ContestPreview = __webpack_require__(/*! ./ContestPreview.js */ 181);
+	
+	var _ContestPreview2 = _interopRequireDefault(_ContestPreview);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var ContestList = function ContestList(_ref) {
+	  var contests = _ref.contests,
+	      onContestClick = _ref.onContestClick;
+	  return _react2.default.createElement(
+	    'div',
+	    { className: 'ContestList' },
+	    contests.map(function (contest) {
+	      return _react2.default.createElement(_ContestPreview2.default, _extends({
+	        key: contest.id,
+	        onClick: onContestClick
+	      }, contest));
+	    })
+	  );
+	};
+	
+	ContestList.propTypes = {
+	  contests: _react2.default.PropTypes.array,
+	  onContestClick: _react2.default.PropTypes.func.isRequired
+	};
+	
+	exports.default = ContestList;
+
+/***/ },
+/* 181 */
 /*!******************************************!*\
   !*** ./src/components/ContestPreview.js ***!
   \******************************************/
@@ -22299,53 +22321,6 @@
 	};
 	
 	exports.default = ContestPreview;
-
-/***/ },
-/* 206 */
-/*!***************************************!*\
-  !*** ./src/components/ContestList.js ***!
-  \***************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-	
-	var _react = __webpack_require__(/*! react */ 1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _ContestPreview = __webpack_require__(/*! ./ContestPreview.js */ 205);
-	
-	var _ContestPreview2 = _interopRequireDefault(_ContestPreview);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var ContestList = function ContestList(_ref) {
-	  var contests = _ref.contests,
-	      onContestClick = _ref.onContestClick;
-	  return _react2.default.createElement(
-	    'div',
-	    { className: 'ContestList' },
-	    contests.map(function (contest) {
-	      return _react2.default.createElement(_ContestPreview2.default, _extends({
-	        key: contest.id,
-	        onClick: onContestClick
-	      }, contest));
-	    })
-	  );
-	};
-	
-	ContestList.propTypes = {
-	  contests: _react2.default.PropTypes.array,
-	  onContestClick: _react2.default.PropTypes.func.isRequired
-	};
-	
-	exports.default = ContestList;
 
 /***/ }
 /******/ ]);
