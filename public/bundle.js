@@ -22176,7 +22176,7 @@
 	  }, {
 	    key: 'componentWillUnmount',
 	    value: function componentWillUnmount() {
-	      // clean timers, listeners
+	      onPopState(null);
 	    }
 	  }, {
 	    key: 'currentContest',
