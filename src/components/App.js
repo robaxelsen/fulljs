@@ -21,6 +21,11 @@ class App extends React.Component {
       { currenContestId: contestId },
       `/contest/${contestId}`
     );
+    // lookup the state
+    // this.state.contest[contestId]
+    this.setState({
+      pageHeader: this.state.contests[contestId].contestName
+    })
   };
   render() {
     return (

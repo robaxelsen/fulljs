@@ -22130,6 +22130,11 @@
 	      contests: _this.props.initialContests
 	    }, _this.fetchContest = function (contestId) {
 	      pushState({ currenContestId: contestId }, '/contest/' + contestId);
+	      // lookup the state
+	      // this.state.contest[contestId]
+	      _this.setState({
+	        pageHeader: _this.state.contests[contestId].contestName
+	      });
 	    }, _temp), _possibleConstructorReturn(_this, _ret);
 	  }
 	
