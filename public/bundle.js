@@ -22393,7 +22393,7 @@
 	      return _react2.default.createElement(
 	        "div",
 	        { className: "Contest" },
-	        this.props.id
+	        this.props.description
 	      );
 	    }
 	  }]);
@@ -22402,7 +22402,7 @@
 	}(_react.Component);
 	
 	Contest.propTypes = {
-	  id: _react.PropTypes.number.isRequired
+	  description: _react.PropTypes.string.isRequired
 	};
 	
 	exports.default = Contest;
