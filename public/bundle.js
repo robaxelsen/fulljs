@@ -22144,7 +22144,15 @@
 	      api.fetchContest(contestId).then(function (contest) {
 	        _this.setState({
 	          currentContestId: contest.id,
-	          contests: _extends({}, _this.state.contests, _defineProperty({}, contest.id, contest))
+	          contests: _extends({}, _this.state.cotests, _defineProperty({}, contest.id, contest))
+	        });
+	      });
+	    }, _this.fetchContestList = function () {
+	      pushState({ currentContestId: null }, '/');
+	      api.fetchContestList().then(function (contests) {
+	        _this.setState({
+	          currentContestId: null,
+	          contests: contests
 	        });
 	      });
 	    }, _temp), _possibleConstructorReturn(_this, _ret);
@@ -22156,7 +22164,7 @@
 	  }, {
 	    key: 'componentWillUnmount',
 	    value: function componentWillUnmount() {
-	      // clean timers and listeners
+	      // clean timers, listeners
 	    }
 	  }, {
 	    key: 'currentContest',
@@ -22169,14 +22177,18 @@
 	      if (this.state.currentContestId) {
 	        return this.currentContest().contestName;
 	      }
+	
 	      return 'Naming Contests';
 	    }
 	  }, {
 	    key: 'currentContent',
 	    value: function currentContent() {
 	      if (this.state.currentContestId) {
-	        return _react2.default.createElement(_Contest2.default, this.currentContest());
+	        return _react2.default.createElement(_Contest2.default, _extends({
+	          contestListClick: this.fetchContestList
+	        }, this.currentContest()));
 	      }
+	
 	      return _react2.default.createElement(_ContestList2.default, {
 	        onContestClick: this.fetchContest,
 	        contests: this.state.contests });
@@ -22199,8 +22211,6 @@
 	App.propTypes = {
 	  initialData: _react2.default.PropTypes.object.isRequired
 	};
-	;
-	
 	exports.default = App;
 
 /***/ },
@@ -22405,7 +22415,17 @@
 	      return _react2.default.createElement(
 	        "div",
 	        { className: "Contest" },
-	        this.props.description
+	        _react2.default.createElement(
+	          "div",
+	          { className: "contest-description" },
+	          this.props.description
+	        ),
+	        _react2.default.createElement(
+	          "div",
+	          { className: "home-link link",
+	            onClick: this.props.contestListClick },
+	          "Contest List"
+	        )
 	      );
 	    }
 	  }]);
@@ -22414,7 +22434,8 @@
 	}(_react.Component);
 	
 	Contest.propTypes = {
-	  description: _react.PropTypes.string.isRequired
+	  description: _react.PropTypes.string.isRequired,
+	  contestListClick: _react.PropTypes.func.isRequired
 	};
 	
 	exports.default = Contest;
@@ -22431,7 +22452,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.fetchContest = undefined;
+	exports.fetchContestList = exports.fetchContest = undefined;
 	
 	var _axios = __webpack_require__(/*! axios */ 184);
 	
@@ -22442,6 +22463,12 @@
 	var fetchContest = exports.fetchContest = function fetchContest(contestId) {
 	  return _axios2.default.get('/api/contests/' + contestId).then(function (response) {
 	    return response.data;
+	  });
+	};
+	
+	var fetchContestList = exports.fetchContestList = function fetchContestList() {
+	  return _axios2.default.get('/api/contests').then(function (response) {
+	    return response.data.contests;
 	  });
 	};
 

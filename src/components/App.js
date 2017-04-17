@@ -13,10 +13,10 @@ class App extends React.Component {
   };
   state = this.props.initialData;
   componentDidMount() {
-  
+
   }
   componentWillUnmount() {
-    // clean timers and listeners
+    // clean timers, listeners
   }
   fetchContest = (contestId) => {
     pushState(
@@ -27,9 +27,21 @@ class App extends React.Component {
       this.setState({
         currentContestId: contest.id,
         contests: {
-          ...this.state.contests,
+          ...this.state.cotests,
           [contest.id]: contest
         }
+      });
+    });
+  };
+  fetchContestList = () => {
+    pushState(
+      { currentContestId: null },
+      '/'
+    );
+    api.fetchContestList().then(contests => {
+      this.setState({
+        currentContestId: null,
+        contests
       });
     });
   };
@@ -40,15 +52,19 @@ class App extends React.Component {
     if (this.state.currentContestId) {
       return this.currentContest().contestName;
     }
+
     return 'Naming Contests';
   }
   currentContent() {
     if (this.state.currentContestId) {
-      return <Contest {...this.currentContest()} />;
+      return <Contest
+               contestListClick={this.fetchContestList}
+               {...this.currentContest()} />;
     }
+
     return <ContestList
-        onContestClick={this.fetchContest}
-        contests={this.state.contests} />
+            onContestClick={this.fetchContest}
+            contests={this.state.contests} />;
   }
   render() {
     return (
@@ -57,7 +73,7 @@ class App extends React.Component {
         {this.currentContent()}
       </div>
     );
-  };
-};
+  }
+}
 
 export default App;
