@@ -8,9 +8,10 @@ const pushState = (obj, url) =>
   window.history.pushState(obj, '', url);
 
 class App extends React.Component {
-  state = {
-    contests: this.props.initialContests
+  static propTypes = {
+    initialData: React.PropTypes.object.isRequired
   };
+  state = this.props.initialData;
   componentDidMount() {
   
   }
