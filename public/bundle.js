@@ -22140,13 +22140,11 @@
 	    }
 	
 	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = App.__proto__ || Object.getPrototypeOf(App)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-	      pageHeader: 'Naming Contests',
 	      contests: _this.props.initialContests
 	    }, _this.fetchContest = function (contestId) {
 	      pushState({ currentContestId: contestId }, '/contest/' + contestId);
 	      api.fetchContest(contestId).then(function (contest) {
 	        _this.setState({
-	          pageHeader: contest.contestName,
 	          currentContestId: contest.id,
 	          contests: _extends({}, _this.state.contests, _defineProperty({}, contest.id, contest))
 	        });
@@ -22163,10 +22161,23 @@
 	      // clean timers and listeners
 	    }
 	  }, {
+	    key: 'currentContest',
+	    value: function currentContest() {
+	      return this.state.contests[this.state.currentContestId];
+	    }
+	  }, {
+	    key: 'pageHeader',
+	    value: function pageHeader() {
+	      if (this.state.currentContestId) {
+	        return this.currentContest().contestName;
+	      }
+	      return 'Naming Contests';
+	    }
+	  }, {
 	    key: 'currentContent',
 	    value: function currentContent() {
 	      if (this.state.currentContestId) {
-	        return _react2.default.createElement(_Contest2.default, this.state.contests[this.state.currentContestId]);
+	        return _react2.default.createElement(_Contest2.default, this.currentContest());
 	      }
 	      return _react2.default.createElement(_ContestList2.default, {
 	        onContestClick: this.fetchContest,
@@ -22178,7 +22189,7 @@
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'App' },
-	        _react2.default.createElement(_Header2.default, { message: this.state.pageHeader }),
+	        _react2.default.createElement(_Header2.default, { message: this.pageHeader() }),
 	        this.currentContent()
 	      );
 	    }
